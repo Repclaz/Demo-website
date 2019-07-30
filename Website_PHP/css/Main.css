@@ -19,36 +19,29 @@ button:hover {
 }
 
 /*Homepage*/
-#News {
-	position:relative;
-	top:55px;
-	left:30px;
-	height:550px;
-	width:420px;
+#main-container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-#Misc {
-	position:relative;
-	top:-494px;
-	left:600px;
-	height:100px;
-	width:600px;
+.body-element {
+  margin: 10px;
 }
 
-#Twitter {
-	position:relative;
-	top:-450px;
-	left:925px;
-	height:400px;
-	width:400px;
+#news {
+  background-color: #18191c;
 }
 
-#Games {
-	position:relative;
-	top:-850px;
-	left:500px;
-	height:400px;
-	width:400px;
+#misc {
+  background-color: #18191c;
+}
+
+#twitter {
+  background-color: #18191c;
+}
+
+#games {
+  background-color: #18191c;
 }
 
 /*Mobile[Tablet] Homepage*/

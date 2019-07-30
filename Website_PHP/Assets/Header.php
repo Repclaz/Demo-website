@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Home</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/Main.css">
 	<link rel="stylesheet" type="text/css" href="css/Header.css">
 	<!--Meta-->
@@ -12,24 +13,39 @@
 		<!--
 		If made in php the header will be on a seperate file
 		-->
-		<header id="Header">
-			<!--If PHP then this will need to be a POST method-->
-			<img id="HomeLogo" src="Images/DiplomacyImage.png"/>
-			<button id="Profile">Account</button>
-			<button id="Community">Join The Community</button>
-			
-			<button id="Home">Home</button>
-			<button id="Tutorial">Tutorial</button>
-			<button id="Gameplay">Gameplay</button>
-			<button id="Nexus">Nexus</button>
-			<button id="About">About</button>
-		</header>
-			<!--mobile header-->
-		<header id="MobileHeader">
-			<div id="SideButton" class="container" onclick="toggle(this)">
- 				<div class="bar1"></div>
-  				<div class="bar2"></div>
- 				<div class="bar3"></div>
-			</div>
-			<h1 id="MobileTitle">Diplomacy Nexus</h1>
+		<header id="header">
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <a id="logo-link" class="navbar-brand" href="#"><img id="logo" src="./Images/DiplomacyImage.png" /></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Tutorial</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Gameplay</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Nexus</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link nav-item-right" href="#">Join The Community</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-item-right" href="#">Account</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 		</header>
