@@ -1,3 +1,60 @@
+<?php
+$con = mysqli_connect("localhost", "root", "", "social");
+
+if(mysqli_connect_errno()) {
+  echo "Failed to connect: " . mysqli_connect_errno(); 
+}
+
+// Declaring variables for registration to prevent errors
+$fname = "";
+$lname = "";
+$email = "";
+$email_confirm = "";
+$password = "";
+$password_confirm = "";
+$date = "";
+$error_array = "";
+
+if (isset($_POST['register_button'])) {
+
+  // Set values from registration form POST
+  $fname = strip_tags($_POST['reg_fname']);
+  $fname = str_replace(' ', '', $fname);
+  $fname = ucfirst(strtolower($fname));
+
+  $lname = strip_tags($_POST['reg_fname']);
+  $lname = str_replace(' ', '', $lname);
+  $lname = ucfirst(strtolower($lname));
+
+  $email = strip_tags($_POST['reg_email']);
+  $email = str_replace(' ', '', $email);
+  $email = ucfirst(strtolower($email));
+
+  $email_confirm = strip_tags($_POST['reg_email_confirm']);
+  $email_confirm = str_replace(' ', '', $email_confirm);
+  $email_confirm = ucfirst(strtolower($email_confirm));
+
+  $password = strip_tags($_POST['reg_password']);
+  $password_confirm = strip_tags($_POST['reg_password_confirm']);
+
+  $date = date("Y-m-d");
+
+  if ($email == $email_confirm) {
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+
+    }
+    else {
+      echo "Email must follow format: user@email.com";
+    }
+  }
+  else {
+    echo "Emails don't match";
+  }
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
