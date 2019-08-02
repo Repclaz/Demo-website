@@ -1,13 +1,13 @@
 <?php
-$con = mysqli_connect("localhost", "root", "", "social");
+$con = mysqli_connect("localhost", "root", "", "nexus");
 
 if(mysqli_connect_errno()) {
   echo "Failed to connect: " . mysqli_connect_errno(); 
 }
 
 // Declaring variables for registration to prevent errors
-$fname = "";
-$lname = "";
+$first_name = "";
+$last_name = "";
 $email = "";
 $email_confirm = "";
 $password = "";
@@ -18,13 +18,13 @@ $error_array = "";
 if (isset($_POST['register_button'])) {
 
   // Set values from registration form POST
-  $fname = strip_tags($_POST['reg_fname']);
-  $fname = str_replace(' ', '', $fname);
-  $fname = ucfirst(strtolower($fname));
+  $first_name = strip_tags($_POST['reg_first_name']);
+  $first_name = str_replace(' ', '', $first_name);
+  $first_name = ucfirst(strtolower($first_name));
 
-  $lname = strip_tags($_POST['reg_fname']);
-  $lname = str_replace(' ', '', $lname);
-  $lname = ucfirst(strtolower($lname));
+  $last_name = strip_tags($_POST['reg_last_name']);
+  $last_name = str_replace(' ', '', $last_name);
+  $last_name = ucfirst(strtolower($last_name));
 
   $email = strip_tags($_POST['reg_email']);
   $email = str_replace(' ', '', $email);
@@ -42,10 +42,42 @@ if (isset($_POST['register_button'])) {
   if ($email == $email_confirm) {
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
+      $email = filter_var($email, FILTER_VALIDATE_EMAIL);
+
+      $email_check = mysqli_query($con, "SELECT email FROM users WHERE email='$email'");
+
+      $num_rows = mysqli_num_rows($email_check);
+
+      if ($num_rows > 0) {
+        echo "Email already in use";
+      }
+
     }
     else {
       echo "Email must follow format: user@email.com";
     }
+
+    if (strlen($first_name) > 25 || strlen($first_name) < 2) {
+      echo "Your first name must be between 2 and 25 characters";
+    }
+
+    if (strlen($last_name) > 25 || strlen($last_name) < 2) {
+      echo "Your last name must be between 2 and 25 characters";
+    }
+
+    if ($password != $password_confirm) {
+      echo "Your passwords do not match";
+    }
+    else {
+      if (!ctype_alnum($password)) {
+        echo "Your password can only contain english characters or numbers";
+      }
+    }
+
+    if (strlen($password) > 30 || strlen($password) < 5) {
+      echo "Your password must be between 5 and 30 characters";
+    }
+
   }
   else {
     echo "Emails don't match";

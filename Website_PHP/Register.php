@@ -3,9 +3,9 @@ include'Assets/Header.php';
 ?>
 
   <form action="register.php" method="POST">
-    <input type="text" name="reg_fname" placeholder="First Name" required>
+    <input type="text" name="reg_first_name" placeholder="First Name" required>
     <br>
-    <input type="text" name="reg_lname" placeholder="Last Name" required>
+    <input type="text" name="reg_last_name" placeholder="Last Name" required>
     <br>
     <input type="email" name="reg_email" placeholder="Email" required>
     <br>
