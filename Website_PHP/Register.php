@@ -3,6 +3,24 @@ include'includes/Header.php';
 ?>
 
   <form action="register.php" method="POST">
+    <input type="email" name="log_email" placeholder="Email Address" value="<?php
+      if(isset($_SESSION['log_email'])) {
+        echo $_SESSION['log_email'];
+      }
+    ?>" required>
+    <br>
+    <input type="password" name="log_password" placeholder="Password">
+    <br>
+    <input type="submit" name="login_button" value="Login">
+    <br>
+
+    <?php if(in_array("Password was incorrect<br>", $error_array)) echo "Password was incorrect<br>";
+      else if(in_array("Email not found<br>", $error_array)) "Email not found<br>";
+    ?>
+
+  </form>
+
+  <form action="register.php" method="POST">
     <input type="text" name="reg_first_name" placeholder="First Name" value="<?php if(isset($_SESSION['reg_first_name'])) {
       echo $_SESSION['reg_first_name'];
     }
@@ -41,6 +59,10 @@ include'includes/Header.php';
       else if(in_array("Your password must be between 5 and 30 characters<br>", $error_array)) echo "Your password must be between 5 and 30 characters<br>" ?>
 
     <input type="submit" name="register_button" value="Register">
+    <br>
+
+    <?php if(in_array("<span style='color: #14C800;'>You're all set! Go ahead and login!</span><br>", $error_array)) echo "<span style='color: #14C800;'>You're all set! Go ahead and login!</span><br>"; ?>
+
   </form>
 
 <?php
