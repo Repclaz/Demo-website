@@ -12,6 +12,7 @@ require './includes/form_handlers/login_handler.php';
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/Main.css">
 	<link rel="stylesheet" type="text/css" href="css/Header.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<!--Meta-->
     <meta name="viewport" content= "width=device-width, initial-scale=1.0"> 
 
@@ -50,7 +51,7 @@ require './includes/form_handlers/login_handler.php';
         <a class="nav-link nav-item-right" href="#">Join The Community</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link nav-item-right" href="#">Account</a>
+        <a id="account-link" class="nav-link nav-item-right" href="#">Account</a>
       </li>
     </ul>
   </div>

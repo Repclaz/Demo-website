@@ -1,0 +1,55 @@
+a {
+  text-decoration: none;
+}
+
+#dialog-exit {
+  margin-bottom: 3px;
+  text-align: right;
+}
+
+#dialog-exit:hover {
+  cursor: pointer;
+}
+
+.form-control {
+  margin-bottom: 5px;
+}
+
+#login {
+
+}
+
+.login-box {
+  text-align: center;
+}
+
+.login-box {
+  position: relative;
+  margin: 0 auto;
+  top: 10%;
+  width: 35%;
+  background-color: #18191c;
+  border-radius: 7px;
+  padding: 10px;
+}
+
+.login-header {
+  background-color: red;
+  color: #fff;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  border-radius: 7px 7px 0 0;
+}
+
+#register {
+  display: none;
+}
+
+#dialog-wrapper {
+  background-color: rgba(0,0,0,0.7);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

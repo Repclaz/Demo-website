@@ -37,6 +37,11 @@ include'includes/header.php';
         </div>
       </div>
 
+      <?php
+        include'includes/sections/register.php';
+        echo "register";
+      ?>
+
 
 
 
